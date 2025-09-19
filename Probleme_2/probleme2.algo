@@ -6,30 +6,36 @@ VAR
     i:INTEGER;
     n:INTEGER;
 BEGIN
+/* procedure dot_product  */
     PROCEDURE dot_product(v1:ARRAY_OF FLOAT[], v2:ARRAY_OF FLOAT[],var ps :FLOAT,n:INTEGER)
     VAR
     BEGIN
         ps:=0;
         FOR i FROM 0 TO n-1 STEP 1  DO
+        /* produits scalaire */
             ps := ps + v1[i]*v2[i];
         END_FOR
     END
 
     write("Entrez le taille des vecteurs : ")
+    /* taille des vecteurs */
     read(n)
 
-    write("Entrez les composantes du vecteur v1 :")
+/* entrez des valeurs du vecteurs  */
+    write("Entrez les valeurs du vecteur v1 :")
     FOR i FROM 0 TO n-1 STEP 1  DO
         read(v1[i])
     END_FOR 
-    
-    write("Entrez les composantes du vecteur v2 :")
+    /* entrez des valeurs du vecteurs  */
+    write("Entrez les valeurs du vecteur v2 :")
     FOR i FROM 0 TO n-1 STEP 1  DO
         read(v2[i])
     END_FOR 
         
+        /* appelle de la procedure  */
     dot_product(v1,v2,ps,n)
 
+/* verification du diagonale  */
     IF (ps = 0 ) THEN
         write("Les vecteurs sont orthogonaux")
     ELSE
