@@ -1,0 +1,38 @@
+ALGORITHM Produit en points
+VAR
+    v1:ARRAY_OF FLOAT[]; 
+    v2:ARRAY_OF FLOAT[];
+    ps :FLOAT;
+    i:INTEGER;
+    n:INTEGER;
+BEGIN
+    PROCEDURE dot_product(v1:ARRAY_OF FLOAT[], v2:ARRAY_OF FLOAT[],var ps :FLOAT,n:INTEGER)
+    VAR
+    BEGIN
+        ps:=0;
+        FOR i FROM 0 TO n-1 STEP 1  DO
+            ps := ps + v1[i]*v2[i];
+        END_FOR
+    END
+
+    write("Entrez le taille des vecteurs : ")
+    read(n)
+
+    write("Entrez les composantes du vecteur v1 :")
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(v1[i])
+    END_FOR 
+    
+    write("Entrez les composantes du vecteur v2 :")
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(v2[i])
+    END_FOR 
+        
+    dot_product(v1,v2,ps,n)
+
+    IF (ps = 0 ) THEN
+        write("Les vecteurs sont orthogonaux")
+    ELSE
+        write("Les vecteurs ne sont pas orthogonaux")
+    END_IF
+END
