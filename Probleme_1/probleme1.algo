@@ -34,6 +34,7 @@ BEGIN
             somme:= somme + tab1[i];
     END_FOR
 
+    /* on chercher les elements distinct qui sont dans tab2 */
     FOR i FROM 0 TO tab2.length -1 STEP 1  DO
     trouve:=false; 
         FOR k FROM 0 TO interTab.length -1 STEP 1  DO
@@ -44,7 +45,7 @@ BEGIN
         IF (trouve==false) THEN
             somme:= somme + tab1[i];
     END_FOR
-
+/* on affiche la somme  */
     write("Somme : "somme);
     
 END

@@ -6,7 +6,7 @@ VAR
     i:INTEGER;
     n:INTEGER;
 BEGIN
-/* procedure dot_product  */
+/* procedure dot_product et utilisation d'un pointeur var ps */
     PROCEDURE dot_product(v1:ARRAY_OF FLOAT[], v2:ARRAY_OF FLOAT[],var ps :FLOAT,n:INTEGER)
     VAR
     BEGIN
